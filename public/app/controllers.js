@@ -2,13 +2,14 @@ angular.module('MyCtrls', ['MyServices'])
     .controller('HomeCtrl', ['$scope', function($scope) {
 
     }])
-    .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+    .controller('NavCtrl', ['$scope', 'Auth', '$location', function($scope, Auth, $location) {
         $scope.isLoggedIn = function() {
             return Auth.isLoggedIn();
         };
 
         $scope.logout = function() {
             Auth.removeToken();
+            $location.path('/');
         };
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
