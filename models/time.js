@@ -1,2 +1,8 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+
+var sleepTime = mongoose.Schema({
+    date: String,
+    hour: integer,
+    minute: integer
+});
+module.exports = mongoose.model('time', sleepTime);
