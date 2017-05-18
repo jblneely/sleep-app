@@ -5,7 +5,7 @@ angular.module('MyCtrls', ['MyServices'])
     .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
         $scope.isLoggedIn = function() {
             return Auth.isLoggedIn();
-        }
+        };
 
         $scope.logout = function() {
             Auth.removeToken();
@@ -32,7 +32,7 @@ angular.module('MyCtrls', ['MyServices'])
         };
         var clearAlerts = function() {
             Alerts.clear();
-        }
+        };
 
         $scope.userLogin = function() {
             $http.post('/api/auth', $scope.user).then(function success(res) {
@@ -51,5 +51,5 @@ angular.module('MyCtrls', ['MyServices'])
     .controller('AlertsController', ['$scope', 'Alerts', function($scope, Alerts) {
         $scope.alerts = function() {
             return Alerts.get();
-        }
+        };
     }]);
