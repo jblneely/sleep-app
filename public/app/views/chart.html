@@ -1,10 +1,12 @@
 <h1>SLEEP</h1>
-<form>
-    <input id="date" type="date" name="date">
-    <input type="number" min="0" max="23" />
-    <input type="number" min="15" max="45" step="15" />
-    <input type="submit" value="Submit">
+<form ng-submit="time()">
+    <input id="date" type="date" name="date" ng-model="time.date">
+    <input type="number" min="0" max="23" ng-model="time.hour">
+    <input type="number" min="15" max="45" step="15">
+    <input type="submit" value="Submit" ng-model="time.hour">
 </form>
+<p>this is a person</p>
+{{ person }}
 <!-- <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas> -->
 <canvas id="line"></canvas>
