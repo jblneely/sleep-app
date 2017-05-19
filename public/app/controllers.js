@@ -14,7 +14,6 @@ angular.module('MyCtrls', ['MyServices'])
         };
     }])
 
-
 .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.user = {
         email: '',
@@ -37,7 +36,7 @@ angular.module('MyCtrls', ['MyServices'])
     };
     var clearAlerts = function() {
         Alerts.clear();
-    }
+    };
 
     $scope.userLogin = function() {
         $http.post('/api/auth', $scope.user).then(function success(res) {
@@ -57,7 +56,7 @@ angular.module('MyCtrls', ['MyServices'])
 .controller('AlertsController', ['$scope', 'Alerts', function($scope, Alerts) {
     $scope.alerts = function() {
         return Alerts.get();
-    }
+    };
 }])
 
 .controller("LineCtrl", ['$scope', function($scope) {
