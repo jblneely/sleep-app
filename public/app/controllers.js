@@ -1,6 +1,6 @@
 angular.module('MyCtrls', ['MyServices'])
     .controller('HomeCtrl', ['$scope', function($scope) {
-
+        console.log('home controller console log');
     }])
     .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
         $scope.isLoggedIn = function() {
@@ -52,4 +52,24 @@ angular.module('MyCtrls', ['MyServices'])
         $scope.alerts = function() {
             return Alerts.get();
         }
-    }]);
+    }])
+    .controller("LineCtrl", function($scope) {
+        var sleeps = [{ hours: 7, date: '05/16/17' }, { hours: 8, date: '05/17/17' }];
+        var ctx = document.getElementById("line").getContext('2d');
+
+        sleeps.forEach(function(sleep) {
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Hours"],
+                    datasets: [{
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        data: [sleep.hours]
+                    }]
+                }
+            });
+        });
+    });
