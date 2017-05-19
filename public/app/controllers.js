@@ -67,7 +67,7 @@ angular.module('MyCtrls', ['MyServices'])
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Hours"],
+                labels: ["Date", "Hour"],
                 datasets: [{
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
