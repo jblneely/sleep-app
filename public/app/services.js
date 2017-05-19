@@ -8,7 +8,7 @@ angular.module('MyServices', ['ngResource'])
                 return $window.localStorage['secret-token'];
             },
             removeToken: function() {
-                $window.localStorage.removeItem('secretrecipes-token');
+                $window.localStorage.removeItem('secret-token');
             },
             isLoggedIn: function() {
                 return this.getToken() ? true : false;
