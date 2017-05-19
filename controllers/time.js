@@ -1,5 +1,5 @@
 var express = require('express');
-var Recipe = require('../models/time');
+var time = require('../models/time');
 var router = express.Router();
 
 router.route('/')
@@ -25,20 +25,20 @@ router.route('/:id')
 
             return res.send(time);
         });
-    })
-    .put(function(req, res) {
-        time.findByIdAndUpdate(req.params.id, req.body, function(err) {
-            if (err) return res.status(500).send(err);
 
-            return res.send({ message: 'success' });
-        });
-    })
-    .delete(function(req, res) {
-        time.findByIdAndRemove(req.params.id, function(err) {
-            if (err) return res.status(500).send(err);
+        // .put(function(req, res) {
+        //     time.findByIdAndUpdate(req.params.id, req.body, function(err) {
+        //         if (err) return res.status(500).send(err);
 
-            return res.send({ message: 'success' });
-        });
+        //         return res.send({ message: 'success' });
+        //     });
+        // })
+        // .delete(function(req, res) {
+        //     time.findByIdAndRemove(req.params.id, function(err) {
+        //         if (err) return res.status(500).send(err);
+
+        //         return res.send({ message: 'success' });
+        //     });
     });
 
 module.exports = router;
