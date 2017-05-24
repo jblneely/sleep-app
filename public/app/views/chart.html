@@ -1,13 +1,19 @@
-<h1>SLEEP</h1>
+<h1>TASKS</h1>
 <form>
-    <input id="date" type="date" name="date">
-    <input type="number" min="0" max="23" />
-    <input type="number" min="15" max="45" step="15" />
+    <input id="date" type="date" name="date" placeholder="DATE">
+    <input type="number" min="0" max="23" / placeholder="HOURS">
+    <input type="number" min="0" max="45" step="15" / placeholder="MINUTES">
     <input type="submit" value="Submit">
 </form>
 <!-- <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas> -->
 <canvas id="line"></canvas>
+<div class="container">
+    <h2>WEEKLY PRIZE</h2>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
 <!--
 date and time route that angular can call with $http /$http promise, load it into scope variables date filters built into angular //chart can handle date and number dataset input //moment module will help display date.
  -->

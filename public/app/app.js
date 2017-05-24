@@ -1,4 +1,4 @@
-var app = angular.module('App', ['ui.router', 'MyCtrls']);
+var app = angular.module('TaskApp', ['ui.router', 'TaskCtrls']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -9,6 +9,16 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                     url: '/',
                     templateUrl: 'app/views/home.html',
                     controller: 'HomeCtrl'
+                })
+                .state('newTask', {
+                    url: '/tasks/new',
+                    templateUrl: 'app/views/newTask.html',
+                    controller: 'NewCtrl'
+                })
+                .state('taskShow', {
+                    url: '/tasks/:id',
+                    templateUrl: 'app/views/showTask.html',
+                    controller: 'ShowCtrl'
                 })
                 .state('signup', {
                     url: '/signup',

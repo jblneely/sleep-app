@@ -1,0 +1,11 @@
+<h1>TASKBOARD</h1>
+<a href="/tasks/new" class="btn btn-success">New Task</a>
+<div class="form-group">
+    <label for="search">Search</label>
+    <input type="text" class="form-control" id="search" ng-model="search">
+</div>
+<div class="well" ng-repeat="task in tasks | filter:{title:search} track by task._id">
+    <h1>{{task.title}}</h1>
+    <a ng-href="/tasks/{{task._id}}">Permalink</a>
+    <a ng-click="deleteTask(task._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+</div>
